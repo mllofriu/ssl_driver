@@ -1,0 +1,4 @@
+<launch>
+	<param name="robot_description" textfile="$(find ssl_driver)/urdf/robot.urdf" />
+  <node pkg="rviz" type="rviz" name="rviz" output="screen"/>
+</launch>

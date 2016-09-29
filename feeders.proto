@@ -1,0 +1,11 @@
+option java_package = "edu.usf.ratsim.robot.ssl.sensefeeder.protobuf";
+
+message Feeder {
+	required int32 id = 1;
+	required float x = 2;
+	required float y = 3;
+}
+
+message Feeders {
+	repeated Feeder feeders = 1;
+}
