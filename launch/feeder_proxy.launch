@@ -6,19 +6,6 @@
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 	
-	<node pkg="usb_cam" type="usb_cam_node" name="usb_cam" output="screen">
-    <param name="video_device" value="/dev/video0" />
-    <param name="camera_frame_id" value="usb_cam" />
-    <param name="framerate" value="15" />
-    <param name="image_width" value="320" />
-    <param name="image_height" value="240" />
-    <param name="io_method" value="mmap" />
-    <param name="exposure" value="150" />
-    <param name="autoexposure" value="true"/>
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_info_url" value="file://$(find visual_features_extractor)/cfg/head_camera.yaml"/>
-  </node>
-	
 	<arg name="marker_size" default="8.0" />
   <arg name="max_new_marker_error" default="0.3" />
   <arg name="max_track_error" default="0.2" />
