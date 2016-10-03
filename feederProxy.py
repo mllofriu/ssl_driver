@@ -33,7 +33,7 @@ if __name__ == "__main__":
           if now - lastT < rospy.Duration(.3):
             (t, rot) = tf_listener.lookupTransform(cam_frame, marker_frame, lastT)
             rospy.logdebug("Marker (id, x, y): ({},{},{})".format(1, t[0],  t[1]))
-            markers += [(1, t[0], t[1])]
+            markers += [(0, t[0], t[1])]
         except:
           pass
           

@@ -1,0 +1,8 @@
+option java_package = "edu.usf.ratsim.robot.ssl.slam.protobuf";
+
+message SlamState {
+	required int32 state = 1;
+	required float x = 2;
+	required float y = 3;
+	required float heading = 4;
+}
