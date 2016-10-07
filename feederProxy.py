@@ -14,13 +14,13 @@ cam_frame = "/base"
 marker_frame = "/ar_marker_0"
 
 if __name__ == "__main__":
-    #rospy.init_node('FeederProxy')
-    rospy.init_node('FeederProxy', log_level=rospy.DEBUG)
+    rospy.init_node('FeederProxy')
+    #rospy.init_node('FeederProxy', log_level=rospy.DEBUG)
     
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a socket object
     s.settimeout(None)
     s.connect(("127.0.0.1", 12345))
-    rospy.loginfo("Socket initialized")
+    rospy.loginfo("Feeder proxy socket initialized")
     
     tf_listener = tf.TransformListener()
 

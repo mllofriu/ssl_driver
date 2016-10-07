@@ -35,8 +35,8 @@ def process_tracking_state(ts):
 
 
 if __name__ == "__main__":
-    rospy.init_node('SlamStateProxy', log_level=rospy.DEBUG)
-    #rospy.init_node('SlamStateProxy')
+    #rospy.init_node('SlamStateProxy', log_level=rospy.DEBUG)
+    rospy.init_node('SlamStateProxy')
 
     listener = tf.TransformListener()
    
