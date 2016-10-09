@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="ssl_driver" name="infopub" type="publishCamInfo.py" output="screen">
+        <param name="camera_info_url" value="file://$(find visual_features_extractor)/cfg/head_camera_640.yaml"/>
+    </node>
+</launch>

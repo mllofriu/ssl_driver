@@ -6,11 +6,15 @@
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 
-	<arg name="marker_size" default="8.0" />
-	<arg name="max_new_marker_error" default="0.3" />
+    <node pkg="ssl_driver" name="infopub" type="publishCamInfo.py" output="screen">
+        <param name="camera_info_url" value="file://$(find visual_features_extractor)/cfg/head_camera_640.yaml"/>
+    </node>
+
+	<arg name="marker_size" default="4.6" />
+	<arg name="max_new_marker_error" default="0.2" />
 	<arg name="max_track_error" default="0.2" />
-	<arg name="cam_image_topic" default="/usb_cam/image_raw" />
-	<arg name="cam_info_topic" default="/usb_cam/camera_info" />
+	<arg name="cam_image_topic" default="/camera/image_raw" />
+	<arg name="cam_info_topic" default="/camera/camera_info_orig" />
 	<arg name="output_frame" default="/usb_cam" />
 
 	<node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame)" />
